@@ -8,7 +8,7 @@
     ],
     "autoload": {
 		"psr-0": {
-			"\\Nassau\\PESEL" : "src/"
+			"Nassau\\PESEL" : "src/"
 		}
     }
 }
