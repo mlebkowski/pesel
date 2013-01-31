@@ -71,7 +71,7 @@ class PESEL
 			throw new \InvalidArgumentException('Cannot create pesel from this number: ' . $number);
 		}
 
-		list ($year, $month, $day) = explode('-', $date->format('y-m-d'));
+		list ($year, $month, $day) = explode('-', $date->format('Y-m-d'));
 		switch (floor($year / 100))
 		{
 			case 18: $month = $month + 80; break;
