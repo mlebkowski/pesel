@@ -19,7 +19,7 @@ class PESEL
 	public function __construct($number)
 	{
 		$number = trim($number);
-		if (false === self::isValid($number))
+		if (false === static::isValid($number))
 		{
 			throw new \InvalidArgumentException('Invalid pesel number: ' . $number);
 		}
@@ -42,7 +42,7 @@ class PESEL
 			return false;
 		}
 
-		$checkSum = self::calculateChecksum($number);
+		$checkSum = static::calculateChecksum($number);
 		if ($checkSum !== (int) $number[self::PESEL_LENGTH-1])
 		{
 			return false;
@@ -82,7 +82,7 @@ class PESEL
 			default: throw new \InvalidArgumentException('Invalid year: ' . $date->format('Y'));
 		}
 		$digits = sprintf("%02d%02d%02d", $year % 100, $month, $day) . $number;
-		return new self($digits . self::calculateChecksum($digits));
+		return new static($digits . self::calculateChecksum($digits));
 
 	}
 
@@ -93,7 +93,7 @@ class PESEL
 
 	public function getGender()
 	{
-		return $this->number[self::PESEL_GENDER_INDEX] % 1 ? self::GENDER_MALE : self::GENDER_FEMALE;
+		return ($this->number[self::PESEL_GENDER_INDEX] % 2) ? self::GENDER_MALE : self::GENDER_FEMALE;
 	}
 
 	public function getDate()
