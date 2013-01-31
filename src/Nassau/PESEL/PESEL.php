@@ -26,6 +26,11 @@ class PESEL
 		$this->number = $number;
 	}
 
+	public function getNumber()
+	{
+		return $this->number;
+	}
+
 	public static function isValid($number)
 	{
 		if (self::PESEL_LENGTH !== strlen($number))
