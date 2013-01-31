@@ -1,0 +1,14 @@
+{
+    "name": "mlebkowski/pesel",
+    "authors": [
+        {
+            "name": "Maciej Łebkowski",
+            "email": "m.lebkowski@gmail.com"
+        }
+    ],
+    "autoload": {
+		"psr-0": {
+			"\\Nassau\\PESEL" : "src/"
+		}
+    }
+}
