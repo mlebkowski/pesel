@@ -37,6 +37,12 @@ class PESEL
 		{
 			return false;
 		}
+
+		if(0 === (int)$number)
+		{
+			return false;
+		}
+
 		if (false === ctype_digit($number))
 		{
 			return false;
