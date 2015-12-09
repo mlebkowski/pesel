@@ -68,6 +68,7 @@ class PESELTest extends TestCase
 			'too long'         => ['381226235022', false],
 			'not trimed'       => ['38122623502 ', false],
 			'valid one'        => ['38122623502' , true ],
+			'all zero'         => ['00000000000', false],
 
 			'invalid checksum' => ['38122623503' , false],
 			'invalid date'     => ['38124623500' , true], // date is not checked!
